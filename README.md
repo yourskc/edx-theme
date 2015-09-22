@@ -13,11 +13,13 @@ Theme Authoring
 ===============
 To customize your theme:
 - Fork this repository.
-- Clone it into the theme directory next to your edx-platform directory and rename the theme directory to your new theme's name.
+- Clone it into the "default" directory in "/edx/app/edxapp/themes/" ( if themes/ directory is not exist, create one )
 - Upload your own image assets.
-- Edit the .scss file in static/sass/ and rename the file with your theme's name.
-- Edit the lms.envs.json file in edx-platform and set 'USE_CUSTOM_THEME' to true, and 'THEME_NAME' to your theme's name.
-
+- Edit the _default.scss file in static/sass/ and rename the file with your theme's name.
+- Edit the lms.envs.json file in edx-platform and set 'USE_CUSTOM_THEME' to true, and 'THEME_NAME' to your theme's name ( "default" ).
+- Recompile the edX assets:
+  cd /edx/app/edxapp/edx-platform
+  paver update_assets lms - -settings=aws
 
 License
 =======
